@@ -5,8 +5,6 @@
  */
 package ro.hariton.exceptions;
 
-import ro.hariton.gui.windows.Notify;
-
 /**
  * File's exception class
  *
@@ -20,11 +18,7 @@ public class FileException extends Exception {
     public FileException() {
         super("Generic file exception");
 
-        // Graphical
-        Notify n = new Notify();
-        /*n.setMessage(this.toString());
-        n.setLocation(400, 200);
-        n.setVisible(true);*/
+        System.out.println(this.toString());
     }
 
     /**
@@ -35,10 +29,6 @@ public class FileException extends Exception {
     public FileException(String ex) {
         super(ex);
 
-        // Graphical
-        Notify n = new Notify();
-        /*n.setMessage(this.toString());
-        n.setLocation(400, 200);
-        n.setVisible(true);*/
+        System.out.println(this.toString());
     }
 }

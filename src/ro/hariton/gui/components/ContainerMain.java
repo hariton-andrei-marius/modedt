@@ -5,8 +5,10 @@
  */
 package ro.hariton.gui.components;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import javax.swing.BorderFactory;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import ro.hariton.gui.windows.Principal;
@@ -26,7 +28,10 @@ public class ContainerMain {
         this.setParent(mainWindow);
         this.setEditorArea(new JTextPane());
         this.setEditorView(new JScrollPane(this.getEditorArea()));
-        // remember set background and foreground of editor area
+        this.getEditorView().setBorder(BorderFactory.createEmptyBorder());
+
+        this.getEditorArea().setBackground(new Color(150, 150, 150));
+        this.getEditorArea().setForeground(Color.WHITE);
     }
 
     public Principal getParent() {

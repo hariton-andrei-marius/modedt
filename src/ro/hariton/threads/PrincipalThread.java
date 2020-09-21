@@ -5,7 +5,7 @@
  */
 package ro.hariton.threads;
 
-import ro.hariton.gui.ManagerGUI;
+import ro.hariton.gui.WrapperGUI;
 import ro.hariton.objects.Files;
 
 /**
@@ -17,7 +17,7 @@ public class PrincipalThread implements Runnable {
     
     String name;
     Files files;
-    ManagerGUI baseGUI;
+    WrapperGUI baseGUI;
 
     /**
      * The constructor of the main thread
@@ -41,11 +41,11 @@ public class PrincipalThread implements Runnable {
         this.files = files;
     }
     
-    public ManagerGUI getBaseGUI() {
+    public WrapperGUI getBaseGUI() {
         return baseGUI;
     }
     
-    public void setBaseGUI(ManagerGUI baseGUI) {
+    public void setBaseGUI(WrapperGUI baseGUI) {
         this.baseGUI = baseGUI;
     }
 
@@ -56,6 +56,6 @@ public class PrincipalThread implements Runnable {
     public void run() {
         this.setName(Thread.currentThread().toString());
         this.setFiles(new Files());
-        this.setBaseGUI(new ManagerGUI(this));
+        this.setBaseGUI(new WrapperGUI(this));
     }
 }

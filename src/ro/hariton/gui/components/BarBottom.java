@@ -5,6 +5,7 @@
  */
 package ro.hariton.gui.components;
 
+import javax.swing.BorderFactory;
 import javax.swing.JTextField;
 import ro.hariton.gui.windows.Principal;
 
@@ -14,28 +15,29 @@ import ro.hariton.gui.windows.Principal;
  * @author Hariton Andrei Marius
  */
 public class BarBottom {
-
+    
     private Principal parent;
     private JTextField infoView;
-
+    
     public BarBottom(Principal mainWindow) {
         this.setParent(mainWindow);
         this.setInfoView(new JTextField(this.getParent().getWindowsManager().getThread().getName()));
         this.getInfoView().setEnabled(false);
+        this.getInfoView().setBorder(BorderFactory.createEmptyBorder());
     }
-
+    
     public Principal getParent() {
         return parent;
     }
-
+    
     public void setParent(Principal parent) {
         this.parent = parent;
     }
-
+    
     public JTextField getInfoView() {
         return infoView;
     }
-
+    
     public void setInfoView(JTextField infoView) {
         this.infoView = infoView;
     }

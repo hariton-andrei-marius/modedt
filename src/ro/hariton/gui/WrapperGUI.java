@@ -14,17 +14,16 @@ import ro.hariton.threads.PrincipalThread;
  *
  * @author Hariton Andrei Marius
  */
-public class ManagerGUI extends JFrame {
+public class WrapperGUI extends JFrame {
 
     private PrincipalThread thread;
-    private String threadName;
     private ListenerGUI actionsListener;
     private Principal mainWindow;
 
     /**
      * The constructor of the base container
      */
-    public ManagerGUI(PrincipalThread thread) {
+    public WrapperGUI(PrincipalThread thread) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e) {

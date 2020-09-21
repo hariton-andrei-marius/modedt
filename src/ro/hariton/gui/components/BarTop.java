@@ -5,6 +5,8 @@
  */
 package ro.hariton.gui.components;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
@@ -23,10 +25,12 @@ public class BarTop {
 
     public BarTop(Principal mainWindow) {
         this.setParent(mainWindow);
-        this.setToolsArea(new JTextField("No tools available"));
+
+        this.setToolsArea(new JTextField("New File"));
         this.setToolsView(new JScrollPane(this.getToolsArea()));
         this.getToolsArea().setEnabled(false);
         this.getToolsArea().setBorder(BorderFactory.createEmptyBorder());
+        this.getToolsView().setBorder(BorderFactory.createEmptyBorder());
     }
 
     public Principal getParent() {

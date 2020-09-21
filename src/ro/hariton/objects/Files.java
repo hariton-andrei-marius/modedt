@@ -5,6 +5,7 @@
  */
 package ro.hariton.objects;
 
+import java.util.ArrayList;
 import java.util.TreeMap;
 import ro.hariton.exceptions.FileException;
 
@@ -51,6 +52,26 @@ public class Files {
         } else {
             throw new FileException("Already exists");
         }
+    }
+
+    public String getLastName()
+            throws CloneNotSupportedException {
+
+        FileImp file = null;
+
+        for (FileImp f : files.values()) {
+            if (f.getPath().getPath().equals((files.lastKey()))) {
+                file = (FileImp) f.clone();
+            }
+        }
+
+        if (file != null) {
+            System.out.println(file.getName());
+            return file.getName();
+
+        }
+
+        return "";
     }
 
 }
